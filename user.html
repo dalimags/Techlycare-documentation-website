@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>User Admin Guide - TechlyCare Management</title>
+    <link rel="stylesheet" href="user.css">
+
+   
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>TechlyCare Guidebook</h1>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="user.html">User Admin</a></li>
+                    <li><a href="master.html">Master Admin</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>User Admin Guide</h1>
+        <p class="subtitle">Click a button below to view details.</p>
+
+        <!-- Buttons with Icons -->
+        <div class="guide-buttons">
+            <button class="guide-btn" onclick="toggleSection('login')">🔐 Login</button>
+            <button class="guide-btn" onclick="toggleSection('dashboard')">📊 Dashboard</button>
+            <button class="guide-btn" onclick="toggleSection('resident')">👥 Residents</button>
+            <button class="guide-btn" onclick="toggleSection('accounts')">💰 Accounts</button>
+            <button class="guide-btn" onclick="toggleSection('reports')">📝 Reports</button>
+            <button class="guide-btn" onclick="toggleSection('pettycash')">💵 Petty Cash</button>
+        </div>
+
+
+        <!-- Sections (only one visible at a time) -->
+        <div id="login" class="section-box">
+            <div class="section-icon">🔐</div>
+            <h2>Login</h2>
+            <ul class="feature-list">
+                <li>Enter your username</li>
+                <li>Enter your password</li>
+                <li>Select 'Admin' from the role dropdown</li>
+                <li>Click 'Sign In' to access your dashboard</li>
+            </ul>
+            <div class="video-container">
+                <img src="C:\Techlycare documentation\image\master log.gif" alt="Login Tutorial">
+            </div>
+            <div class="action-buttons">
+                <button class="btn primary" onclick="openPopup('popup-login')">More Details</button>
+            </div>
+        </div>
+
+        <div id="dashboard" class="section-box" style="display:none;">
+            <div class="section-icon">📊</div>
+            <h2>Dashboard</h2>
+            <ul class="feature-list">
+                <li>Add Home</li>
+                <li>View all Home</li>
+                <li>View Staff</li>
+                <li>Generate Reports</li>
+            </ul>
+            <div class="video-container">
+                <img src="C:\Techlycare documentation\image\masterdash.jpg" alt="Dashboard GIF">
+            </div>
+            <div class="action-buttons">
+                <button class="btn primary" onclick="openPopup('popup-dashboard')">More Details</button>
+            </div>
+        </div>
+
+        <div id="resident" class="section-box" style="display:none;">
+            <div class="section-icon">👥</div>
+            <h2>Resident Management</h2>
+            <ul class="feature-list">
+                <li>Add New Resident</li>
+                <li>List of Residents</li>
+            </ul>
+            <div class="video-container">
+                <img src="C:\Techlycare documentation\image\Residents masteradmi.gif" alt="Residents GIF">
+            </div>
+            <div class="action-buttons">
+                <button class="btn primary" onclick="openPopup('popup-resident')">More Details</button>
+            </div>
+        </div>
+
+        <div id="accounts" class="section-box" style="display:none;">
+            <div class="section-icon">💰</div>
+            <h2>Accounts</h2>
+            <ul class="feature-list">
+                <li>Add Mony</li>
+                <li>Add Expence</li>
+                 <li>Paid Back</li>
+                  <li>Transfer</li>
+                  <li>Daily transactions</li>
+            </ul>
+            <div class="video-container">
+                <img src="C:\Techlycare documentation\image\adminaccount add expence.jpg" alt="Accounts GIF">
+            </div>
+            <div class="action-buttons">
+                <button class="btn primary" onclick="openPopup('popup-accounts')">More Details</button>
+            </div>
+        </div>
+
+        <div id="reports" class="section-box" style="display:none;">
+            <div class="section-icon">📝</div>
+            <h2>Reports</h2>
+            <ul class="feature-list">
+                <li>Time Period Report</li>
+                <li>Category Report</li>
+                
+            </ul>
+            <div class="video-container">
+                <img src="C:\Techlycare documentation\image\genarate report .gif" alt="Reports GIF">
+            </div>
+            <div class="action-buttons">
+                <button class="btn primary" onclick="openPopup('popup-reports')">More Details</button>
+            </div>
+        </div>
+
+
+        <div id="pettycash" class="section-box" style="display:none;">
+            <div class="section-icon">💵</div>
+            <h2>Petty Cash</h2>
+            <ul class="feature-list">
+                <li>Add Mony to Home</li>
+               
+            </ul>
+            <div class="video-container">
+                <img src="C:\Techlycare documentation\image\master petty cash.jpg" alt="Petty Cash GIF">
+            </div>
+            <div class="action-buttons">
+                <button class="btn primary" onclick="openPopup('popup-pettycash')">More Details</button>
+            </div>
+        </div>
+
+   
+
+    <!-- ================= Popups (one per section) ================= -->
+
+    <!-- Login Popup -->
+    <div id="popup-login" class="popup-bg" onclick="bgClick(event, 'popup-login')">
+        <div class="popup" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
+            <div class="popup-header">
+                <h3 id="loginTitle">Login — How to sign in</h3>
+                <button class="close-btn" onclick="closePopup('popup-login')" aria-label="Close">&times;</button>
+            </div>
+            <div class="popup-body">
+                <p>Follow these steps to login as Master Admin:</p>
+                <ul>
+                    <li>Open the login page.</li>
+                    <li>Enter your username.</li>
+                    <li>Enter your password.</li>
+                    <li>Select <strong>Admin</strong> from the role dropdown.</li>
+                    <li>Click <strong>Sign In</strong> to access your dashboard.</li>
+                </ul>
+            </div>
+            <div class="popup-footer">
+                <a class="action-link" target="_blank" href="https://my.carehomesurvey.com/index.php">Open Login Page</a>
+                <button class="secondary" onclick="closePopup('popup-login')">Close</button>
+            </div>
+        </div>
+    </div>
+
+   <!-- Dashboard Popup -->
+<div id="popup-dashboard" class="popup-bg" onclick="bgClick(event, 'popup-dashboard')">
+    <div class="popup" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
+        <div class="popup-header">
+            <h3 id="dashboard">Dashboard</h3>
+            <button class="close-btn" onclick="closePopup('popup-dashboard')" aria-label="Close">&times;</button>
+        </div>
+
+        <div class="popup-body" style="max-height:400px; overflow-y:auto; text-align:left;">
+
+            <h4>🏠 Care Home Admin Dashboard Overview</h4>
+            <p>This dashboard provides a quick snapshot of the care home's operational and financial status, along with shortcuts to daily tasks.</p>
+
+            <h5>1. Key Performance Indicators (KPIs) & Financial Snapshot</h5>
+            <h6>📊 Quick-View KPI Cards</h6>
+            <ul>
+                <li>👥 <b>Total Residents</b> – Shows the current number of residents (e.g., 0).</li>
+                <li>💰 <b>Monthly Receipts</b> – Displays total income received this month (e.g., £0.00).</li>
+                <li>💸 <b>Monthly Payments</b> – Shows all expenses paid this month (e.g., £0.00).</li>
+                <li>📉 <b>Net Money</b> – Calculates <b>Receipts – Payments</b> to show the monthly net balance (e.g., £0.00).</li>
+            </ul>
+
+            <h5>2. Financial Analysis</h5>
+            <ul>
+                <li>📈 <b>Monthly Income vs Expenses Chart</b> – A bar graph comparing Income (green) and Expenses (red) to quickly show profit or deficit.</li>
+                <li>⚠️ <b>Residents with Low Monthly Payments</b> – A green ✔️ with the message “All residents have adequate payment records” indicates everything is in order.</li>
+            </ul>
+
+            <h5>3. Quick Action Buttons</h5>
+            <p>These buttons allow the administrator to perform common tasks instantly:</p>
+            <ul>
+                <li>➕👤 <b>Add New Resident</b> – Opens the form to create a resident profile.</li>
+                <li>➕💵 <b>Record Income</b> – Opens the module to log new income.</li>
+                <li>➖💵 <b>Record Expense</b> – Opens the module to record a payment/expense.</li>
+                <li>📄 <b>Generate Reports</b> – Generates operational and financial reports for this care home.</li>
+            </ul>
+
+        </div>
+
+        <div class="popup-footer">
+            <a class="action-link" target="_blank" href="https://my.carehomesurvey.com/index.php">Open Dashboard</a>
+            <button class="secondary" onclick="closePopup('popup-dashboard')">Close</button>
+        </div>
+    </div>
+</div>
+
+    
+  <!-- Resident Popup -->
+<div id="popup-resident" class="popup-bg" onclick="bgClick(event, 'popup-resident')">
+    <div class="popup" role="dialog" aria-modal="true" aria-labelledby="residentTitle">
+
+        <!-- Header -->
+        <div class="popup-header">
+            <h3 id="residentTitle">Residents — Full Guide</h3>
+            <button class="close-btn" onclick="closePopup('popup-resident')" aria-label="Close">&times;</button>
+        </div>
+
+        <!-- Body -->
+        <div class="popup-body">
+
+            <!-- ADDING NEW RESIDENT SECTION -->
+            <h3>👵 Adding a New Resident</h3>
+
+            <p><strong>Stage 1: Initiate the Process & Enter Personal Details</strong></p>
+            <p>📂 <strong>Navigate to Resident Management</strong><br>
+                Click the Residents tab in the Care Home Admin sidebar.</p>
+
+            <p>➕👤 <strong>Start Adding a Resident</strong><br>
+                Click the <strong>Add Resident</strong> button to open the Add New Resident form.</p>
+
+            <p>📝 <strong>Enter Personal Information</strong></p>
+            <ul>
+                <li>Title (optional): Select from dropdown (e.g., None)</li>
+                <li>Last Name</li>
+                <li>First Name</li>
+                <li>Date of Birth (mm/dd/yyyy)</li>
+                <li>NHS Number</li>
+                <li>Gender (Male/Female/Other)</li>
+            </ul>
+
+            <p><strong>Stage 2: Enter Next of Kin, Contact & Medical Details</strong></p>
+            <p>👨‍👩‍👦 <strong>Next of Kin (NOK) Details</strong></p>
+            <ul>
+                <li>NOK Name</li>
+                <li>NOK Email Address</li>
+                <li>NOK Phone Number</li>
+                <li>NOK Relationship (e.g., Son, Daughter, Spouse)</li>
+            </ul>
+
+            <p>📞 <strong>Contact & Residence Details</strong></p>
+            <ul>
+                <li>Phone Number</li>
+                <li>Address</li>
+            </ul>
+
+            <p>🩺 <strong>Medical Information</strong></p>
+            <ul>
+                <li>Medical Conditions</li>
+                <li>Current Medications</li>
+            </ul>
+
+            <p>🏠 <strong>Admission Details</strong></p>
+            <ul>
+                <li>Admission Date (mm/dd/yyyy)</li>
+                <li>Room Number</li>
+            </ul>
+
+            <p><strong>Stage 3: Finalize the Entry</strong></p>
+            <p>💾 <strong>Save Resident Profile</strong><br>
+                Click the blue <strong>Add Resident</strong> button to save and add the resident.</p>
+
+            <p>🔄 <strong>Reset if Needed</strong><br>
+                Click <strong>Reset Form</strong> to clear all data and start again.</p>
+
+            <!-- RESIDENT MANAGEMENT ACTIONS -->
+            <h3>👵 Resident Management Actions (Web Care)</h3>
+            <p>The Resident Management System lists all residents along with financial summaries and an Actions column containing five icons.</p>
+
+            <h4>1. 🔵 View Resident Details (First Icon)</h4>
+            <ul>
+                <li><strong>Click View:</strong> Click the blue icon in the Actions column.</li>
+                <li><strong>Review Details:</strong> Pop-up shows Personal, Contact, and Residence information.</li>
+                <li><strong>Close:</strong> Click ❌ to return.</li>
+            </ul>
+
+            <h4>2. 🟧 Edit Resident Details (Second Icon)</h4>
+            <ul>
+                <li><strong>Click Edit:</strong> Click the orange icon.</li>
+                <li><strong>Modify Fields:</strong> Edit pop-up opens with prefilled details.</li>
+                <li><strong>Save Changes:</strong> Click Save to update.</li>
+            </ul>
+
+            <h4>3. 🟣 View Transaction History (Third Icon)</h4>
+            <ul>
+                <li><strong>Click Transactions:</strong> Click the purple icon.</li>
+                <li><strong>View History:</strong> Pop-up lists financial activities.</li>
+                <li><strong>Filters:</strong> Filter by month, navigate using arrows.</li>
+                <li><strong>Columns:</strong> Date, Type, Description, Method, Amount, Balance, Reference, Created By.</li>
+                <li><strong>No Records:</strong> Message appears if no transactions exist.</li>
+                <li><strong>Close:</strong> Click Close to return.</li>
+            </ul>
+
+            <h4>4. 🟡 Deactivate Resident (Fourth Icon)</h4>
+            <ul>
+                <li><strong>Click Deactivate:</strong> Click the yellow icon.</li>
+                <li><strong>Confirm:</strong> System asks for confirmation.</li>
+                <li><strong>Finalize:</strong> Click Deactivate or Cancel.</li>
+            </ul>
+
+            <h4>5. 🔴 Delete Resident (Fifth Icon)</h4>
+            <ul>
+                <li><strong>Click Delete:</strong> Click the red trash icon.</li>
+                <li><strong>Confirm Warning:</strong> Shows irreversible deletion message.</li>
+                <li><strong>Finalize:</strong> Click Delete or Cancel.</li>
+            </ul>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="popup-footer">
+            <a class="action-link" target="_blank" href="https://my.carehomesurvey.com/index.php">Open Residents</a>
+            <button class="secondary" onclick="closePopup('popup-resident')">Close</button>
+        </div>
+    </div>
+</div>
+
+
+   <!-- Accounts Popup -->
+<div id="popup-accounts" class="popup-bg" onclick="bgClick(event, 'popup-accounts')">
+    <div class="popup" role="dialog" aria-modal="true" aria-labelledby="accountsTitle">
+        
+        <!-- Header -->
+        <div class="popup-header">
+            <h3 id="accountsTitle">Accounts — Full Finance Guide</h3>
+            <button class="close-btn" onclick="closePopup('popup-accounts')" aria-label="Close">&times;</button>
+        </div>
+
+        <!-- Body -->
+        <div class="popup-body">
+
+            <!-- ADD MONEY -->
+            <h3>💰 Add Money</h3>
+            <ol>
+                <li>👤 Enter Payer/Resident Name — Select the person/entity giving money.</li>
+                <li>🏦 Select Account — Where the money will be deposited.</li>
+                <li>📂 Select Category/Head — For accurate reporting.</li>
+                <li>📅 Enter Date — Defaults to today’s date (e.g., 22/11/2025).</li>
+                <li>💵 Enter Amount — Total received.</li>
+                <li>🔢 Enter Reference — Unique number/code for tracking.</li>
+                <li>✏️ Enter Description — Brief explanation of payment.</li>
+                <li>✅ Confirm Details — Review for accuracy.</li>
+                <li>💾 Add Money — Click blue button to save.</li>
+                <li>🔄 Reset Form (Optional) — Clear all fields.</li>
+            </ol>
+            <p><em>Best Practice Tip:</em> Always select correct Category/Head for accurate reports.</p>
+
+            <hr style="margin:20px 0; border-top:1px solid #ddd;">
+
+            <!-- ADD EXPENSE -->
+            <h3>💸 Add an Expense</h3>
+            <ol>
+                <li>📝 Fill Expense Details — Type, Amount, Resident (optional), Payment Type, Reference, Date, Description, Upload Proof.</li>
+                <li>✅ Confirm and Save — Click Add Expense (Blue Button). Reset form if needed.</li>
+                <li>📊 Check Updates — Daily Transactions updates automatically.</li>
+            </ol>
+
+            <hr style="margin:20px 0; border-top:1px solid #ddd;">
+
+            <!-- PAID BACK -->
+            <h3>⬇️ Paid Back / Drop</h3>
+            <ol>
+                <li>📝 Enter Drop Details — Drop Amount, Resident (optional), Reason, Payment Type, Reference, Date, Description, Upload Proof.</li>
+                <li>✅ Confirm and Save — Click Process Drop (Blue Button). Reset form if needed.</li>
+                <li>📊 Check Updates — Total Drops summary updates automatically.</li>
+            </ol>
+
+            <hr style="margin:20px 0; border-top:1px solid #ddd;">
+
+            <!-- TRANSFER FUNDS -->
+            <h3>🔄 Transfer Funds</h3>
+            <ol>
+                <li>📝 Fill Transfer Details — Amount, Resident (optional), Transfer Method, Reference, Date, Description.</li>
+                <li>✅ Confirm and Save — Click Process Transfer (Blue Button). Reset form if needed.</li>
+                <li>📊 Check Updates — Overall Bank & Cash Balances update automatically.</li>
+            </ol>
+
+            <hr style="margin:20px 0; border-top:1px solid #ddd;">
+
+            <!-- DAILY TRANSACTIONS -->
+            <h3>📅 Daily Transactions</h3>
+            <ol>
+                <li>📊 Check Key Summary Cards — Total Income, Expenses, Drops, Net Balance, Overall Bank/Cash Balance.</li>
+                <li>🗂️ View Transaction List — Table shows all transactions for the date range.</li>
+                <li>⚙️ Use Filters — By Date Range, Type, Resident.</li>
+                <li>🟦 Use Action Buttons — Add Money, Add Expense, Paid Back, Transfer, Daily Transaction.</li>
+            </ol>
+
+            <hr style="margin:20px 0; border-top:1px solid #ddd;">
+
+            <!-- GENERATE REPORT -->
+            <h3>📊 Generate Report</h3>
+            <ol>
+                <li>📈 Review Financial Summary — Total Income, Expenses, Drops, Net Balance, Income Transactions, Recent Transactions.</li>
+                <li>🗂️ Check Transaction Details Table — Date, Type, Description, Resident, Amount, Payment Method.</li>
+                <li>📅 Analyze Monthly Trends — Last 6 months’ Income, Expenses, Drops, Net Balance.</li>
+                <li>💳 Review Payment Methods — Cash, Bank, Credit Card totals and counts.</li>
+                <li>📝 Next Steps — Log new transactions (Add Money / Add Expense) and regenerate report.</li>
+            </ol>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="popup-footer">
+            <a class="action-link" target="_blank" href="https://my.carehomesurvey.com/index.php">Open Accounts</a>
+            <button class="secondary" onclick="closePopup('popup-accounts')">Close</button>
+        </div>
+
+    </div>
+</div>
+
+
+   <!-- Reports Popup -->
+<div id="popup-reports" class="popup-bg" onclick="bgClick(event, 'popup-reports')">
+    <div class="popup" role="dialog" aria-modal="true" aria-labelledby="reportsTitle">
+        
+        <!-- Header -->
+        <div class="popup-header">
+            <h3 id="reportsTitle">Reports & Analytics — Step-by-Step Guide</h3>
+            <button class="close-btn" onclick="closePopup('popup-reports')" aria-label="Close">&times;</button>
+        </div>
+
+        <!-- Body -->
+        <div class="popup-body">
+            
+            <h3>🧭 Reports & Analytics Overview</h3>
+            <ul>
+                <li><strong>Total Care Homes 🏠:</strong> 6 homes in the system</li>
+                <li><strong>Total Residents 👤:</strong> 39 residents across all homes</li>
+                <li><strong>Total Balance 💰:</strong> £11,489.27 (all homes combined)</li>
+            </ul>
+
+            <h4>1️⃣ Time Period Reports 📅</h4>
+            <p><em>Purpose:</em> Analyze financial performance over a specific timeframe.</p>
+            <ol>
+                <li>Select Report Type 📊 – Yearly, Monthly, Quarterly, etc. (currently Yearly Report selected).</li>
+                <li>Apply Filters ⚙️ – Choose Year (e.g., 2025) and optionally a Resident.</li>
+                <li>Generate Report 🖨️ – Click <strong>Generate PDF Report</strong> to produce the report.</li>
+            </ol>
+            <p><strong>Example:</strong> Yearly Report 2025 – Anchorage Care Home</p>
+            <ul>
+                <li>Resident List 👤 – Names and room numbers.</li>
+                <li>Monthly Financial Breakdown 📈 – Monthly totals for Income, Expenses, Drops, and Net Balance.</li>
+                <li>Transaction Details 🗂️ – Lists all transactions for the year (may show “No transactions found” if none logged).</li>
+            </ul>
+
+            <h4>2️⃣ Category Reports 🗂️</h4>
+            <p><em>Purpose:</em> Focus on operational and combined data across homes, not just financial periods.</p>
+            <ol>
+                <li>Select Report Type 📊 – Care Home Report, Resident Details Report, Staff Report, etc. (currently Care Home Report selected).</li>
+                <li>Generate Report 🖨️ – Click <strong>Generate PDF Report</strong>.</li>
+            </ol>
+
+            <h4>✅ Summary of Report Generation</h4>
+            <ol>
+                <li>Navigate to <strong>Reports & Analytics</strong> (or click Generate Report from a module).</li>
+                <li>Choose either <strong>Time Period Reports 📅</strong> or <strong>Category Reports 🗂️</strong>.</li>
+                <li>Select the Report Type and apply necessary Filters (Year, Resident, Care Home).</li>
+                <li>Click <strong>Generate PDF Report 🖨️</strong> to view or download the report.</li>
+            </ol>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="popup-footer">
+            <a class="action-link" target="_blank" href="https://my.carehomesurvey.com/index.php">Open Reports</a>
+            <button class="secondary" onclick="closePopup('popup-reports')">Close</button>
+        </div>
+
+    </div>
+</div>
+
+
+    <!-- Petty Cash Popup -->
+<div id="popup-pettycash" class="popup-bg" onclick="bgClick(event, 'popup-pettycash')">
+    <div class="popup" role="dialog" aria-modal="true" aria-labelledby="pettyTitle">
+        
+        <!-- Header -->
+        <div class="popup-header">
+            <h3 id="pettyTitle">Petty Cash — Step-by-Step Guide</h3>
+            <button class="close-btn" onclick="closePopup('popup-pettycash')" aria-label="Close">&times;</button>
+        </div>
+
+        <!-- Body -->
+        <div class="popup-body">
+
+            <h3>💵 Petty Cash Management – Care Home</h3>
+            <p>The Petty Cash module records and reconciles small daily cash transactions for the care home.</p>
+
+            <h4>1. Petty Cash Dashboard Overview</h4>
+            <ul>
+                <li>📂 <strong>Navigate to Petty Cash:</strong> Click the Petty Cash tab in the sidebar of the Care Home Admin dashboard.</li>
+                <li>💰 <strong>View Available Balance:</strong> The current cash float is displayed in the blue bar (e.g., £0.00 Available Petty Cash).</li>
+                <li>📝 <strong>Review Transactions:</strong> The Recent Transactions table shows Type, Amount, Description, Staff, Transaction Date, Updated Date, Receipt.</li>
+                <li>🔎 <strong>Filter:</strong> Use Filter by Month to view transactions for a specific period.</li>
+            </ul>
+
+            <h4>2. Recording Income (Adding Money)</h4>
+            <ul>
+                <li>➕ <strong>Initiate:</strong> Click + Add Money above the Recent Transactions table.</li>
+                <li>📝 <strong>Enter Details:</strong> The Add Money pop-up appears:
+                    <ul>
+                        <li><strong>Amount to Add:</strong> Enter the cash amount being added</li>
+                        <li><strong>Transaction Date:</strong> Defaults to today; change via calendar icon if needed</li>
+                        <li><strong>Description (Optional):</strong> e.g., “Cash replenishment from Bank withdrawal”</li>
+                        <li><strong>Upload Receipt (Optional):</strong> Click Choose File (Max 5MB)</li>
+                    </ul>
+                </li>
+                <li>💾 <strong>Submit:</strong> Click + Add Money to record the inflow and update the Available Balance.</li>
+            </ul>
+
+            <h4>3. Recording Expense (Expensing Money)</h4>
+            <ul>
+                <li>➕ <strong>Initiate:</strong> Click + Add Expense above the Recent Transactions table.</li>
+                <li>📝 <strong>Enter Details:</strong> The Add Expense pop-up appears:
+                    <ul>
+                        <li><strong>Available Balance:</strong> Displayed for reference</li>
+                        <li><strong>Amount to Use:</strong> Enter the cash spent</li>
+                        <li><strong>Transaction Date:</strong> Defaults to today; can be changed</li>
+                        <li><strong>Description:</strong> e.g., “Emergency batteries for clock”</li>
+                        <li><strong>Upload Receipt (Optional):</strong> Click Choose File (Max 5MB)</li>
+                    </ul>
+                </li>
+                <li>💸 <strong>Submit:</strong> Click — Expense Money to record the outflow and update the Available Balance.</li>
+            </ul>
+
+            <h3>💷 Petty Cash Management</h3>
+            <p>Manage petty cash balances for all care homes:</p>
+
+            <h4>Step 1: 🏠 View Petty Cash Table</h4>
+            <ul>
+                <li><strong>Home Name 📋:</strong> Lists all care homes (e.g., WEB Care, Orchid Woodlands).</li>
+                <li><strong>Remaining Amount 💰:</strong> Shows current petty cash balance for each home.</li>
+                <li><strong>Last Updated ⏰:</strong> Date/time when balance was last changed.</li>
+                <li><strong>Actions:</strong>
+                    <ul>
+                        <li>+ Add Money ➕ (Green Button) – Top up or add funds.</li>
+                        <li>View 🔵 (Blue Button) – See past petty cash transactions for the home.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h4>Step 2: ➕ Add Money to Petty Cash (Single Home)</h4>
+            <ol>
+                <li>Click the + Add Money button for a specific home (e.g., WEB Care).</li>
+                <li>Fill in the form:
+                    <ul>
+                        <li><strong>Home Name 🏠:</strong> Already selected.</li>
+                        <li><strong>Amount to Add 💵:</strong> Enter cash being added (e.g., 200.00).</li>
+                        <li><strong>Transaction Date 📅:</strong> Date of top-up (e.g., 22/11/2025).</li>
+                        <li><strong>Description ✏️ (Optional):</strong> Brief note (e.g., "Weekly Petty Cash Float Top-up").</li>
+                        <li><strong>Receipt 📎 (Optional):</strong> Upload supporting document if available.</li>
+                    </ul>
+                </li>
+                <li>Click <strong>Add Money (Blue Button)</strong> to complete the top-up.</li>
+            </ol>
+
+            <h4>Step 3: ➕ Add Money Across Homes</h4>
+            <ol>
+                <li>Click the main + Add Money to Home button at the top of the page.</li>
+                <li>Select Home 🏠 – Choose the care home from the dropdown list.</li>
+                <li>Proceed to the same Add Money form as above.</li>
+            </ol>
+
+            <h4>Step 4: ⚠️ Important Notes</h4>
+            <p>
+                Adding money to petty cash is usually recorded as a Transfer or a specific Expense in the main Accounts Management system.<br>
+                This reflects money moving from the main Bank Account to the Cash Account.
+            </p>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="popup-footer">
+            <a class="action-link" target="_blank" href="https://my.carehomesurvey.com/index.php">Open Petty Cash</a>
+            <button class="secondary" onclick="closePopup('popup-pettycash')">Close</button>
+        </div>
+
+    </div>
+</div>
+
+
+    <!-- ================= JS: toggle sections + open/close popups ================= -->
+    <script>
+        /* Show only selected section (keeps your original behavior) */
+        function toggleSection(sectionId) {
+            const sections = document.querySelectorAll('.section-box');
+            sections.forEach(section => section.style.display = 'none');
+            const el = document.getElementById(sectionId);
+            if (el) el.style.display = 'block';
+        }
+
+        /* Open specific popup by id (e.g. 'popup-login') */
+        function openPopup(popupId) {
+            const bg = document.getElementById(popupId);
+            if (!bg) return;
+            bg.style.display = 'flex';
+            // lock scroll
+            document.documentElement.style.overflow = 'hidden';
+            document.body.style.overflow = 'hidden';
+        }
+
+        /* Close popup */
+        function closePopup(popupId) {
+            const bg = document.getElementById(popupId);
+            if (!bg) return;
+            bg.style.display = 'none';
+            // unlock scroll
+            document.documentElement.style.overflow = '';
+            document.body.style.overflow = '';
+        }
+
+        /* Allow clicking on backdrop to close popup (but only if clicked outside the modal) */
+        function bgClick(event, popupId) {
+            // if the click target is the background (this container) then close
+            if (event.target && event.currentTarget === event.target) {
+                closePopup(popupId);
+            }
+        }
+
+        /* Accessibility: close popup on Escape key */
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                // find visible popup-bg and close the first one
+                const visible = document.querySelectorAll('.popup-bg');
+                visible.forEach(bg => {
+                    if (bg.style.display === 'flex') {
+                        bg.style.display = 'none';
+                    }
+                });
+                document.documentElement.style.overflow = '';
+                document.body.style.overflow = '';
+            }
+        });
+    </script>
+</body>
+</html>

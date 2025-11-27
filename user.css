@@ -1,0 +1,524 @@
+/* ===========================
+   GENERAL PAGE STYLING
+=========================== */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #b4b6b8;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styles */
+.header {
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 12px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 2px;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.navbar a:hover {
+    color: #0070BB;
+    background: rgba(59, 130, 246, 0.08);
+}
+
+.navbar a.active {
+    color: white;
+    background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+/* Headings */
+h1 {
+    font-size: 36px;
+    color: #1e3a8a;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+
+        /* ---------- Page styles (keeps your existing look) ---------- */
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background: #276ed9;
+            color: white;
+            padding: 15px 0;
+        }
+        .header .logo h1 {
+            margin: 0;
+            text-align: center;
+            color: #e9eff8;
+
+        }
+        .navbar ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 10px 0 0 0;
+        }
+        .navbar ul li {
+            margin: 0 15px;
+        }
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+        .guide-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+        .guide-btn {
+            flex: 1 1 150px;
+            background: #0a3776;
+            color: white;
+            border: none;
+            padding: 12px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: background 0.3s;
+        }
+        .guide-btn:hover {
+            background: #0056b3;
+        }
+        .section-box {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+        }
+        .section-icon {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        .section-box h2 {
+            margin-top: 0;
+            color: #0d6efd;
+        }
+        .feature-list {
+            list-style: disc;
+            margin-left: 20px;
+        }
+        .video-container {
+            margin-top: 15px;
+        }
+        .video-container img {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 10px;
+        }
+        .action-buttons { margin-top: 12px; }
+        .btn.primary {
+            background: #0d6efd;
+            color: #fff;
+            padding: 8px 12px;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .btn.primary:hover { opacity: 0.95; }
+
+        /* ---------- Medium popup (500px) styles ---------- */
+        .popup-bg {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* FULL WIDTH POPUP */
+.popup {
+    background: #fff;
+    width: 95%;             /* 🔥 full width near */
+    max-width: 900px;       /* 🔥 big popup (increase if needed) */
+    max-height: 90vh;       /* 🔥 taller popup */
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    overflow: hidden;
+    animation: modalIn 0.18s ease;
+}
+
+@keyframes modalIn {
+    from { transform: translateY(-10px) scale(.98); opacity: 0; }
+    to   { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+.popup-header {
+    background: linear-gradient(90deg,#0d6efd,#2b8cff);
+    color: white;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.popup-header h3 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.popup-body {
+    padding: 22px;
+    text-align: left;
+    color: #223;
+    line-height: 1.55;
+    max-height: calc(90vh - 160px); /* 🔥 more height */
+    overflow-y: auto;
+    font-size: 15px;
+}
+
+.popup-body ul { margin: 12px 0 0 20px; }
+
+.popup-footer {
+    padding: 14px 20px;
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+    border-top: 1px solid #eee;
+}
+
+.popup .close-btn {
+    background: transparent;
+    border: none;
+    color: rgba(255,255,255,0.9);
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.popup .action-link {
+    background: #0d6efd;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+.popup .secondary {
+    background: #f1f5f9;
+    color: #111827;
+    padding: 10px 16px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+@media (max-width:520px) {
+    .popup {
+        max-width: 100%;
+        width: 100%;
+        border-radius: 0;
+    }
+}
+
+    
+/* ===========================
+   GUIDE BUTTONS
+=========================== */
+.guide-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.guide-btn {
+    flex: 1 1 150px;
+    background: #0d6efd;
+    color: white;
+    border: none;
+    padding: 12px 15px;
+    border-radius: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;                          
+    font-weight: bold;
+    font-size: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.guide-btn:hover {
+    background: #0070BB;
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 8px 20px #0070BB;
+}
+
+/* ===========================
+   SECTION BOX DESIGN
+=========================== */
+.section-box {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    cursor: default;
+    display: none;
+    text-align: left;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.section-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.section-icon {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.section-box h2 {
+    margin-top: 0;
+    color: #0d6efd;
+}
+
+.feature-list {
+    padding-left: 20px;
+}
+
+.feature-list li {
+    margin-bottom: 10px;
+}
+
+/* ===========================
+   MEDIA (IMAGE/VIDEO)
+=========================== */
+.media-container,
+.video-container,
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0;
+}
+
+.guide-media,
+.tutorial-image,
+.video-container iframe,
+.video-container img,
+.video-container video {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+    object-fit: cover;
+}
+
+.tutorial-image:hover,
+.video-container img:hover {
+    transform: scale(1.03);
+}
+
+/* ===========================
+   ACTION BUTTON (TRY IT NOW)
+=========================== */
+.action-buttons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn.primary {
+    background: #0d6efd;
+    padding: 12px 25px;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 10px;
+    display: inline-block;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn.primary:hover {
+    background: #0056b3;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (max-width: 992px) {
+    .guide-media,
+    .tutorial-image,
+    .video-container iframe,
+    .video-container img,
+    .video-container video {
+        max-width: 500px;
+        height: auto;
+    }
+}
+
+@media (max-width: 900px) {
+    .guide-buttons {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+}
+
+@media (max-width: 600px) {
+    .guide-buttons {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+/* ===============================
+   FIX — HEADER RESPONSIVE
+================================*/
+
+/* Desktop */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    background: #1e63dd;
+    color: white;
+}
+
+/* Logo */
+.header-title {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+/* Menu */
+.nav-menu {
+    display: flex;
+    gap: 30px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* Mobile Button */
+.hamburger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+
+/* ===============================
+   MOBILE — BELOW 768px
+================================*/
+@media (max-width: 768px) {
+
+    header {
+        padding: 15px 20px;
+        position: relative;
+    }
+
+    .header-title {
+        font-size: 22px;
+    }
+
+    /* Hide menu */
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 15px;
+        width: 180px;
+        background: #1e63dd;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        z-index: 999;
+    }
+
+    /* Show menu when active */
+    .nav-menu.show {
+        display: flex;
+    }
+
+    /* Show hamburger */
+    .hamburger {
+        display: block;
+    }
+
+    /* Menu links */
+    .nav-menu a {
+        padding: 10px 0;
+        color: white;
+        text-align: left;
+        font-size: 16px;
+        border-bottom: 1px solid rgba(255,255,255,0.3);
+    }
+
+    .nav-menu a:last-child {
+        border-bottom: none;
+    }
+}
