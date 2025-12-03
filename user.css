@@ -267,13 +267,21 @@ h1 {
     cursor: pointer;
 }
 
-@media (max-width:520px) {
-    .popup {
-        max-width: 100%;
-        width: 100%;
-        border-radius: 0;
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    nav.active ul {
+        display: flex;
     }
 }
+
 
     
 /* ===========================
@@ -522,3 +530,4 @@ header {
         border-bottom: none;
     }
 }
+
